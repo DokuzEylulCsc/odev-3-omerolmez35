@@ -14,7 +14,7 @@ using namespace std;
 int main(int argc, char** argv) {
 	
 	
-	// 2019280078-ÖMER ÖLMEZ
+	// 2019280078-Ã–MER Ã–LMEZ
 	
 	ifstream dosyaOku;
 	dosyaOku.open("input.txt");
@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
 	fstream dosyaYaz;
 	dosyaYaz.open("output.txt",ios::out | ios::in | ios::app);
 	
-	// İlk olarak maksimum 100 kişi olacağı için bunun kontrolünü yapıyoruz
+	// Ä°lk olarak maksimum 100 kiÅŸi olacaÄŸÄ± iÃ§in bunun kontrolÃ¼nÃ¼ yapÄ±yoruz
 	while(getline(dosyaOku,oku1))
 	{
 		sinir++;
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
 	if(sinir < 103)
 
 {
-// Soru sayısını ve doğru cevapları değişkenlere atıyoruz.
+// Soru sayÄ±sÄ±nÄ± ve doÄŸru cevaplarÄ± deÄŸiÅŸkenlere atÄ±yoruz.
 dosyaOku.open("input.txt");
 	while(getline(dosyaOku,oku))
 	{
@@ -63,7 +63,7 @@ dosyaOku.open("input.txt");
 		
 		if(dongu > 2)
 		{
-			// Satır satır verileri okuyup öğrencinin verdiği cevap ile cevap anahtarını karşılaştırıp puanlamasını yapıyoruz.
+			// SatÄ±r satÄ±r verileri okuyup Ã¶ÄŸrencinin verdiÄŸi cevap ile cevap anahtarÄ±nÄ± karÅŸÄ±laÅŸtÄ±rÄ±p puanlamasÄ±nÄ± yapÄ±yoruz.
 			ogrenciNo[dongu-3] = oku.substr(0,9);
 			sub = 10;
 			for(int j = 0; j < soruSayisi; j++)
@@ -72,7 +72,7 @@ dosyaOku.open("input.txt");
 				ogrenciCevaplar[j] = oku[sub];
 				sub = sub + 2;
 				
-				// Son sorunun boş olup olmadığını kontrol ediyoruz.
+				// Son sorunun boÅŸ olup olmadÄ±ÄŸÄ±nÄ± kontrol ediyoruz.
 				if((oku[kontrol-1] == ',' ) && (j == soruSayisi -1)) 
 				{
 					
@@ -100,14 +100,14 @@ dosyaOku.open("input.txt");
 				
 			}
 		}
-						//Puan 0'dan küçük ise 0'a eşitliyoruz.
+						//Puan 0'dan kÃ¼Ã§Ã¼k ise 0'a eÅŸitliyoruz.
 						if(ogrenciPuan[dongu-3] < 0) ogrenciPuan[dongu-3] = 0;
-						//Ortalamayı hesaplıyoruz.
+						//OrtalamayÄ± hesaplÄ±yoruz.
 						ortalama = ortalama + ogrenciPuan[dongu-3];
 		}
 		
 }	
-			//BubbleSort algoritmasını kullanarak notları büyükten küçüğe aynı zamanda öğrenci numaralarınıda notlara göre sıralıyoruz.
+			//BubbleSort algoritmasÄ±nÄ± kullanarak notlarÄ± bÃ¼yÃ¼kten kÃ¼Ã§Ã¼ÄŸe aynÄ± zamanda Ã¶ÄŸrenci numaralarÄ±nÄ±da notlara gÃ¶re sÄ±ralÄ±yoruz.
 			 double temp;
 			 string temp1;
 			 for(int a =0; a < (dongu-3); a++)
@@ -129,7 +129,7 @@ dosyaOku.open("input.txt");
 	  int medyan,medyanhesap;
 	
 	  c = dongu -3;
-	  //Medyan hesaplamasını yapmak için öğrenci sayısının çift yada tek olduğunu hesaplayıp ona göre medyanı buluyoruz.
+	  //Medyan hesaplamasÄ±nÄ± yapmak iÃ§in Ã¶ÄŸrenci sayÄ±sÄ±nÄ±n Ã§ift yada tek olduÄŸunu hesaplayÄ±p ona gÃ¶re medyanÄ± buluyoruz.
 	  if((dongu - 2)%2 == 0)
 	  {
 	  	medyanhesap = (dongu - 2)/2;
@@ -140,11 +140,11 @@ dosyaOku.open("input.txt");
 	  }
 	  else
 	  {
-	  	medyan = ((dongu-2)+1)/2-1;
+	  	medyan = ogrenciPuan[(dongu-2)/2];
 	  }
 	  for(c = dongu - 3; c >= 0; c--)
 	  {
-	  	//Öğrencilerin puanlarını öğrenci numarasıyla birlikte yazdırıyoruz. Aynı zamanda 100'e normalize etmek için 2.5 ile çarpıyoruz.
+	  	//Ã–ÄŸrencilerin puanlarÄ±nÄ± Ã¶ÄŸrenci numarasÄ±yla birlikte yazdÄ±rÄ±yoruz. AynÄ± zamanda 100'e normalize etmek iÃ§in 2.5 ile Ã§arpÄ±yoruz.
 	  	cout << ogrenciNo[c]<<","<<ogrenciPuan[c]*2.5<<endl;
 	  	dosyaYaz <<ogrenciNo[c]<<","<<ogrenciPuan[c]*2.5<<endl;
 	  }
@@ -166,7 +166,7 @@ else
 }	
 }
 
-//BU ÖDEV YAPIMINDA QUİZ-2'DE KULLANDIĞIM BUBBLE SORT ALGORİTMASINDAN KAYNAK ALDIM.ONUN HARİCİNDE HERHANGİ BİR KAYNAKTAN YAPILMAMIŞTIR.
-//BÜTÜN ALGORİTMA VE KODLAR BANA AİTTİR.
+//BU Ã–DEV YAPIMINDA QUÄ°Z-2'DE KULLANDIÄIM BUBBLE SORT ALGORÄ°TMASINDAN KAYNAK ALDIM.ONUN HARÄ°CÄ°NDE HERHANGÄ° BÄ°R KAYNAKTAN YAPILMAMIÅTIR.
+//BÃœTÃœN ALGORÄ°TMA VE KODLAR BANA AÄ°TTÄ°R.
 
 
